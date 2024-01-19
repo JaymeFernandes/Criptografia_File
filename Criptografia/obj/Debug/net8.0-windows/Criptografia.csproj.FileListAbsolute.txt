@@ -15,3 +15,4 @@ C:\Users\jayme\OneDrive\Documentos\GitHub\Projects\Criptografia\Criptografia\obj
 C:\Users\jayme\OneDrive\Documentos\GitHub\Projects\Criptografia\Criptografia\obj\Debug\net8.0-windows\Criptografia.genruntimeconfig.cache
 C:\Users\jayme\OneDrive\Documentos\GitHub\Projects\Criptografia\Criptografia\obj\Debug\net8.0-windows\ref\Criptografia.dll
 C:\Users\jayme\OneDrive\Documentos\GitHub\Projects\Criptografia\Criptografia\obj\Debug\net8.0-windows\Criptografia.Properties.Resources.resources
+C:\Users\jayme\OneDrive\Documentos\GitHub\Projects\Criptografia\Criptografia\obj\Debug\net8.0-windows\Criptografia.sourcelink.json
