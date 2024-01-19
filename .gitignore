@@ -1,8 +1,12 @@
-discord/obj/
-discord/.vs/
-discord/bin/
-!discord/bin/Debug/
-discord/bin/Debug/*
-!discord/bin/Debug/net7.0/
-discord/bin/Debug/net7.0/*
-!discord/bin/Debug/net7.0/Modules/
+# Ignorar diretórios .vs
+.vs/
+
+# Ignorar diretórios bin e obj dentro de Criptografia
+Criptografia/bin/
+Criptografia/obj/
+
+# Ignorar a pasta Properties dentro de Criptografia
+Criptografia/Properties/
+
+# Ignorar o arquivo Criptografia.csproj.user dentro de Criptografia
+Criptografia/Criptografia.csproj.user
