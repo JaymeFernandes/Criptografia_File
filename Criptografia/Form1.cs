@@ -44,21 +44,5 @@ namespace Criptografia
         //Variavel que guarda se o menu está aberto
         bool Menu = true;
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Aes aes = new Aes();
-            test1 = aes.CriptografarString(textBox2.Text, textBox1.Text);
-            textBox1.Text = Convert.ToBase64String(test1);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Aes aes = new Aes();
-            byte[] bytes = test1;
-
-            textBox1.Text = aes.DesCriptografarString(textBox2.Text, test1);
-        }
-
-        byte[] test1;
     }
 }

@@ -253,7 +253,6 @@
             button6.TabIndex = 4;
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -263,7 +262,6 @@
             button5.TabIndex = 3;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // textBox2
             // 

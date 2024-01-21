@@ -18,23 +18,20 @@ namespace Criptografia.CriptoFile
         /// <param name="password"></param>
         /// <param name="text"></param>
         /// <exception cref="ArgumentException"></exception>
-        public byte[] CriptografarString(string password, string text)
+        public byte[] CriptografarString(string Password, string Text)
         {
-            if (password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
+            if (Password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
 
-            password = password.PadLeft(16, '0');
-
-            //Valor para gerar uma chave unica
-            byte[] salt = GerarSalt();
+            Password = Password.PadLeft(16, '0');
 
             // Convert o texto em bytes alem de pegar um IV aleatorio
-            byte[] Password = DerivarChavePBKDF2(password, salt, 10000, 256 / 8);
-            byte[]  Iv = GetBytesRandom();
+            byte[] password = Encoding.UTF8.GetBytes(Password);
+            byte[] Iv = GetBytesRandom();
 
 
             using (AesManaged aes = new AesManaged())
             {
-                aes.Key = Password;
+                aes.Key = password;
                 aes.IV = Iv;
 
                 ICryptoTransform crypto = aes.CreateEncryptor(aes.Key, aes.IV);
@@ -45,22 +42,22 @@ namespace Criptografia.CriptoFile
                     {
                         using(StreamWriter sw = new StreamWriter(cryptoStream))
                         {
-                            sw.Write(text);
+                            sw.Write(Text);
                         }
                     }
 
-                    byte[] dadosCriptografadosComSaltIV = salt.Concat(Iv).Concat(ms.ToArray()).ToArray();
-
-                    return dadosCriptografadosComSaltIV;
+                    return Iv.Concat(ms.ToArray()).ToArray();
                 }
             }
 
         }
 
-        public byte[] CriptografarArquivos(string senha, byte[] salt, byte[] dadosArquivo)
+        public byte[] CriptografarArquivos(string Password, byte[] dadosArquivo)
         {
-            // Derivar a chave usando PBKDF2
-            byte[] chaveDerivada = DerivarChavePBKDF2(senha, salt, 10000, 256 / 8);
+            if (Password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
+
+            Password = Password.PadLeft(16, '0');
+            byte[] password = Encoding.UTF8.GetBytes(Password);
 
             // Gerar um IV aleatório
             byte[] iv = GetBytesRandom();
@@ -68,10 +65,9 @@ namespace Criptografia.CriptoFile
             // Criar uma instância AES
             using (AesManaged aesAlg = new AesManaged())
             {
-                aesAlg.Key = chaveDerivada;
+                aesAlg.Key = password;
                 aesAlg.IV = iv;
 
-                // Criar um transformador de criptografia
                 ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
                 // Criar streams para criptografia
@@ -83,10 +79,7 @@ namespace Criptografia.CriptoFile
                         cs.Write(dadosArquivo, 0, dadosArquivo.Length);
                     }
 
-                    // Concatenar o salt, IV e os dados criptografados
-                    byte[] dadosCriptografadosComSaltIV = salt.Concat(iv).Concat(ms.ToArray()).ToArray();
-
-                    return dadosCriptografadosComSaltIV;
+                    return iv.Concat(ms.ToArray()).ToArray();
                 }
             }
         }
@@ -109,31 +102,27 @@ namespace Criptografia.CriptoFile
 
         #region // Descriptografia
 
-        public string DesCriptografarString(string password, byte[] dadosCriptografadosComSaltIV)
+        public string DesCriptografarString(string Password, byte[] Dados)
         {
-            if (password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
+            if (Password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
 
-            // Extrair o salt do início do array
-            int tamanhoSalt = 16;
-            byte[] salt = new byte[tamanhoSalt];
-            Array.Copy(dadosCriptografadosComSaltIV, 0, salt, 0, tamanhoSalt);
+            Password = Password.PadLeft(16, '0');
 
-            // Extrair o IV após o salt
-            int tamanhoIV = 16;
-            byte[] iv = new byte[tamanhoIV];
-            Array.Copy(dadosCriptografadosComSaltIV, tamanhoSalt, iv, 0, tamanhoIV);
+            byte[] iv = new byte[16];
+            Array.Copy(Dados, 0, iv, 0, 16);
 
-            // Derivar a chave usando PBKDF2
-            byte[] chaveDerivada = DerivarChavePBKDF2(password, salt, 10000, 256 / 8);
+            byte[] dados = new byte[Dados.Length - 16];
+            Array.Copy(Dados, 16, dados, 0, Dados.Length - 16);
+            
 
             using (AesManaged aesAlg = new AesManaged())
             {
-                aesAlg.Key = chaveDerivada;
+                aesAlg.Key = Encoding.UTF8.GetBytes(Password);
                 aesAlg.IV = iv;
 
                 ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
 
-                using (MemoryStream ms = new MemoryStream(dadosCriptografadosComSaltIV, tamanhoSalt + tamanhoIV, dadosCriptografadosComSaltIV.Length - tamanhoSalt - tamanhoIV))
+                using (MemoryStream ms = new MemoryStream(dados))
                 {
                     using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
                     {
@@ -151,24 +140,21 @@ namespace Criptografia.CriptoFile
 
 
 
-        public byte[] DescriptografarArquivos(string password, byte[] dadosCriptografadosComSaltIV)
+        public byte[] DescriptografarArquivos(string Password, byte[] Dados)
         {
-            if (password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos maximo");
+            if (Password.Length > 16) throw new ArgumentException("Senha de Criptografia invalida necessita ter 16 digitos no máximo");
 
-            int tamanhoSalt = 16;
-            byte[] salt = new byte[tamanhoSalt];
-            Array.Copy(dadosCriptografadosComSaltIV, 0, salt, 0, tamanhoSalt);
+            Password = Password.PadLeft(16, '0');
 
-            int tamanhoIV = 16;
-            byte[] iv = new byte[tamanhoIV];
-            Array.Copy(dadosCriptografadosComSaltIV, tamanhoSalt, iv, 0, tamanhoIV);
+            byte[] iv = new byte[16];
+            Array.Copy(Dados, 0, iv, 0, 16);
 
-            byte[] chaveDerivada = DerivarChavePBKDF2(password, salt, 10000, 256 / 8);
-
+            byte[] dados = new byte[Dados.Length - 16];
+            Array.Copy(Dados, 16, dados, 0, Dados.Length - 16);
 
             using (AesManaged aesAlg = new AesManaged())
             {
-                aesAlg.Key = chaveDerivada;
+                aesAlg.Key = Encoding.UTF8.GetBytes(Password);
                 aesAlg.IV = iv;
 
                 ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
@@ -177,38 +163,16 @@ namespace Criptografia.CriptoFile
                 {
                     using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
                     {
-                        cs.Write(dadosCriptografadosComSaltIV, tamanhoSalt + tamanhoIV, dadosCriptografadosComSaltIV.Length - tamanhoSalt - tamanhoIV);
+                        cs.Write(dados, 0, dados.Length);
                     }
 
-                    byte[] dadosDescriptografados = ms.ToArray();
-
-                    return dadosDescriptografados;
+                    return ms.ToArray();
                 }
             }
         }
 
-        #endregion
-
-        #region // Melhoramento de Senha
-
-        static byte[] DerivarChavePBKDF2(string senha, byte[] salt, int iteracoes, int tamanhoChave)
-        {
-            using (Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(senha, salt, iteracoes))
-            {
-                return pbkdf2.GetBytes(tamanhoChave);
-            }
-        }
-
-        static byte[] GerarSalt()
-        {
-            using (RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider())
-            {
-                byte[] salt = new byte[16];
-                rngCsp.GetBytes(salt);
-                return salt;
-            }
-        }
 
         #endregion
+
     }
 }
