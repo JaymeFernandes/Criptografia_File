@@ -1,4 +1,4 @@
-using Criptografia.CriptoFile;
+using Criptografia.Modules.CriptoFile;
 using System.Text;
 
 namespace Criptografia
@@ -11,6 +11,17 @@ namespace Criptografia
         }
 
         #region //Events
+
+        //fecha a aplicação
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Btn_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
         //Button Menu
         private void Btn_Menu_Click(object sender, EventArgs e)
@@ -43,6 +54,5 @@ namespace Criptografia
 
         //Variavel que guarda se o menu está aberto
         bool Menu = true;
-
     }
 }

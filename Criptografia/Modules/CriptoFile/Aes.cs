@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace Criptografia.CriptoFile
+namespace Criptografia.Modules.CriptoFile
 {
 
     class Aes
@@ -36,11 +36,11 @@ namespace Criptografia.CriptoFile
 
                 ICryptoTransform crypto = aes.CreateEncryptor(aes.Key, aes.IV);
 
-                using(MemoryStream ms = new MemoryStream())
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    using(CryptoStream cryptoStream = new CryptoStream(ms, crypto, CryptoStreamMode.Write))
+                    using (CryptoStream cryptoStream = new CryptoStream(ms, crypto, CryptoStreamMode.Write))
                     {
-                        using(StreamWriter sw = new StreamWriter(cryptoStream))
+                        using (StreamWriter sw = new StreamWriter(cryptoStream))
                         {
                             sw.Write(Text);
                         }
@@ -90,7 +90,7 @@ namespace Criptografia.CriptoFile
         /// <returns>um byte aleatorio</returns>
         private byte[] GetBytesRandom()
         {
-            using(RNGCryptoServiceProvider rngCsp =  new RNGCryptoServiceProvider())
+            using (RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider())
             {
                 byte[] iv = new byte[16];
                 rngCsp.GetBytes(iv);
@@ -113,7 +113,7 @@ namespace Criptografia.CriptoFile
 
             byte[] dados = new byte[Dados.Length - 16];
             Array.Copy(Dados, 16, dados, 0, Dados.Length - 16);
-            
+
 
             using (AesManaged aesAlg = new AesManaged())
             {
