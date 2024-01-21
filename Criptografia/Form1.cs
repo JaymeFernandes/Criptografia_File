@@ -1,4 +1,5 @@
 using Criptografia.Modules.CriptoFile;
+using Criptografia.Modules.Gerenciar_Arquivos;
 using System.Text;
 
 namespace Criptografia
@@ -54,5 +55,36 @@ namespace Criptografia
 
         //Variavel que guarda se o menu está aberto
         bool Menu = true;
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if (DialogResult.OK == openFileDialog1.ShowDialog())
+            {
+                Dados = ReadFile.GetBytes(openFileDialog1.FileName);
+                Pathfile = openFileDialog1.FileName;
+            }
+        }
+
+        byte[] Dados;
+        string Pathfile;
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Aes aes = new Aes();
+
+            byte[] cript = aes.CriptografarArquivos(textBox1.Text, Dados);
+
+            CreateFile.CopyFile(cript, Pathfile, "aes");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Aes aes = new Aes();
+
+            byte[] cript = aes.DescriptografarArquivos(textBox1.Text, Dados);
+            Pathfile = Pathfile.Replace(".aes", "");
+            CreateFile.CopyFile(cript, Pathfile, "");
+        }
     }
 }

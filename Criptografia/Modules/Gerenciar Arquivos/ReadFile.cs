@@ -8,7 +8,7 @@ namespace Criptografia.Modules.Gerenciar_Arquivos
 {
     static class ReadFile
     {
-        static byte[] GetBytes(string PathFile)
+        public static byte[] GetBytes(string PathFile)
         {
             if (!File.Exists(PathFile)) throw new FileNotFoundException("O arquivo passado não existe/Foi excluido!");
 

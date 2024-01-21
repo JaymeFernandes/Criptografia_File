@@ -46,11 +46,17 @@
             panel4 = new Panel();
             Animation_Menu = new System.Windows.Forms.Timer(components);
             panelMain = new Panel();
+            button6 = new Button();
+            button5 = new Button();
+            textBox1 = new TextBox();
+            openFileDialog1 = new OpenFileDialog();
+            button7 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel_Menu.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -153,7 +159,6 @@
             // 
             // button3
             // 
-            button3.Dock = DockStyle.Top;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.White;
@@ -190,7 +195,7 @@
             // 
             // button4
             // 
-            button4.Dock = DockStyle.Top;
+            button4.Anchor = AnchorStyles.Left;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = Color.White;
@@ -230,11 +235,56 @@
             // panelMain
             // 
             panelMain.AutoScroll = true;
+            panelMain.Controls.Add(button7);
+            panelMain.Controls.Add(button6);
+            panelMain.Controls.Add(button5);
+            panelMain.Controls.Add(textBox1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 63);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(800, 387);
             panelMain.TabIndex = 3;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(366, 127);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 23);
+            button6.TabIndex = 2;
+            button6.Text = "Criptografar";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(285, 127);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 1;
+            button5.Text = "abrir";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(285, 84);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(156, 23);
+            textBox1.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button7
+            // 
+            button7.Location = new Point(321, 159);
+            button7.Name = "button7";
+            button7.Size = new Size(75, 23);
+            button7.TabIndex = 3;
+            button7.Text = "Descriptografar";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // Form1
             // 
@@ -254,6 +304,8 @@
             panel_Menu.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -275,5 +327,10 @@
         private Button button3;
         private Panel panel6;
         private Button button4;
+        private Button button6;
+        private Button button5;
+        private TextBox textBox1;
+        private OpenFileDialog openFileDialog1;
+        private Button button7;
     }
 }
