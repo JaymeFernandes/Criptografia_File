@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Btn_Minimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAB9JREFUOE9jGAXDAvz//98KiJeQia0oN2AUDH3AwAAAqPRyecCtaBQAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="Btn_Minimize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>599, 0</value>
+  </data>
+  <data name="Btn_Close.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHFJREFUOE/NkkEKgDAMBPsLBR/uOzz4vjqRFAtNYrUHHQg02d1AIek/5JxXatHW
+        RTzi1faC4URt0RK0OfQguEuYxeEChmYJ775woQ7Ub5X70PCu9SwsDC0g8P4LVsCamUTGSDu5NQCaf2wM
+        x075I1I6AAAu04WQZLSVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Btn_Close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>634, 0</value>
+  </data>
+  <data name="Panel_Borderless.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 0</value>
+  </data>
+  <data name="Panel_Borderless.Size" type="System.Drawing.Size, System.Drawing">
+    <value>669, 21</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Btn_Historico.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Btn_Historico.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Btn_Historico.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="Btn_Historico.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAASRJREFUOE/VlD1OAlEYRaegVSlEKwLIEjQ0VuoS0Nq4BH8q2YIUhrAJ40aMhVpI
+        g0a3oBVUz3OZOwkCw8wkNJzkJG++d7/JvHlvJlovQghdLErX7fMw2VBgEsuHsg23L4bA6SQawiM+pKg5
+        0XZbOoSO42youjQHc7U4Eo5cSodQGcd45esWntmWazc4wk1dZ0Kwhz9YxwtMOEe951+8dzwbwhX8wBfc
+        xQPc9/gNh7jteD5o2MN3/EI9qfx2bfnOLoKmJg5w+oYaF78hDVryJ2rJOy6rriW/ol5HxeVsCPdRm6Lj
+        UcJDq7GeVHM9x5dDMDk2l7iBz5jwhKpdozJbbkuH0AmKKnbi4T9usdDBnv70tKuzqJbv0yOw2p+DA0W5
+        c/taEEV/HKR5CL6QbJIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Btn_Historico.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_Historico.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 232</value>
+  </data>
+  <data name="Btn_Historico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 48</value>
+  </data>
+  <data name="Btn_Historico.Text" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="Btn_Historico.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt, style=Bold</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 35</value>
+  </data>
+  <data name="bnt_Descriptografia_Aes.Text" xml:space="preserve">
+    <value>AES</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 34</value>
+  </data>
+  <data name="panel_SubMenu_Descriptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SubMenu_Descriptografia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 198</value>
+  </data>
+  <data name="panel_SubMenu_Descriptografia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 34</value>
+  </data>
+  <data name="Btn_Descriptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Btn_Descriptografia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Btn_Descriptografia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="Btn_Descriptografia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAXlJREFUOE+1lLtKA0EUhtcQKxECsfIhrK0kiNj6AhYaxVqioI3XSh9BGx8gTSwE
+        xcJLJxamsdSAtbfey/r9u2dcx6zuruAPHztz9syXmU02wb8kDMMGHBdgC0q2vDvcPAHlGtT8G9vwCHuQ
+        LuWGhG14hUUYy2AJ3iFdSlHCdViAohk2TRKKTlhTB+mHaZiza8VavVBXajZNQvG7cBJe4Abu4Qqq1v4Z
+        akou4RR07F4FLkHPeCBaYGGu5N7hA4zDIFRBu/R2yljJJdSuLuJheGg9XVKuSrbQyqova07ubO5JQSkk
+        7IN51cgBfD3+LShrULYlcShIuAmeUGEq6YrqZNRqkq7CDjyDPiyRMnGvU/TDtrIXynqm7qhDcA5nMAGS
+        zlhr1FwCvUZv8JNQog5ot5IdGZLuQtNa41Bw0qzomJI44SlI2DJVEoqSjkDaH4LYgCfQMSWVzB25bpr8
+        YVEZ9AVIoF0Jjfehx9qKhYW9MAtNaEEd/ibLThB8AN6gVhV20A53AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Btn_Descriptografia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_Descriptografia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 150</value>
+  </data>
+  <data name="Btn_Descriptografia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 48</value>
+  </data>
+  <data name="Btn_Descriptografia.Text" xml:space="preserve">
+    <value>Criptografia</value>
+  </data>
+  <data name="Btn_Descriptografia.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="Btn_Criptografia_Aes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Btn_Criptografia_Aes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Btn_Criptografia_Aes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt, style=Bold</value>
+  </data>
+  <data name="Btn_Criptografia_Aes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 35</value>
+  </data>
+  <data name="Btn_Criptografia_Aes.Text" xml:space="preserve">
+    <value>AES</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 0</value>
+  </data>
+  <data name="panel_SubMenu_Criptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SubMenu_Criptografia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 150</value>
+  </data>
+  <data name="panel_SubMenu_Criptografia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 0</value>
+  </data>
+  <data name="Btn_Criptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Btn_Criptografia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Btn_Criptografia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="Btn_Criptografia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAOFJREFUOE+9k1EKglAURP0vawPVJqJFFFS0LFtBQXupfsv+otUEdoYGHyLhM8SB
+        A868OxdFTXpVURQz2MPVZDD1cTtRXMENtpAaXd9h6bE4UdCdadnYUSllkEP8nTKsx9za1sTZDjLbZjF8
+        gdS2Js5GcLZtFsO5L38qZqZUJwsZ0Bt8abAl6my8JojwAAvbaKmjrm0Q4RHmttFSR13boN4Wkg3haQaO
+        S6kDrRZO4W0mjkupA+0emfwhbCtSR13bIIU6tK2I/CRsK1JHXdsghTq0jVavCzv/sDfw76+3/m5Jkg8x
+        85c2+pM22wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Btn_Criptografia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 48</value>
+  </data>
+  <data name="Btn_Criptografia.Text" xml:space="preserve">
+    <value>Criptografia</value>
+  </data>
+  <data name="Btn_Criptografia.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 102</value>
+  </data>
+  <data name="panel_Menu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Cambria Math, 9pt, style=Bold</value>
+  </data>
+  <data name="panel_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 484</value>
+  </data>
+  <data name="panelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 0</value>
+  </data>
+  <data name="panelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>669, 484</value>
+  </data>
+</root>

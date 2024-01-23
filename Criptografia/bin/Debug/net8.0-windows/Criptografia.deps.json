@@ -9,6 +9,11 @@
       "Criptografia/1.0.0": {
         "runtime": {
           "Criptografia.dll": {}
+        },
+        "resources": {
+          "pt-BR/Criptografia.resources.dll": {
+            "locale": "pt-BR"
+          }
         }
       }
     }

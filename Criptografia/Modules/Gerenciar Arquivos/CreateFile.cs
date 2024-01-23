@@ -8,14 +8,10 @@ namespace Criptografia.Modules.Gerenciar_Arquivos
 {
     static class CreateFile
     {
-        public static void CopyFile(byte[] Dados,string PathFile, string Extension)
+        public static void CopyFile(byte[] Dados,string PathFile)
         {
-            string direotory = Path.GetDirectoryName(PathFile);
-            string name = Path.GetFileNameWithoutExtension(PathFile);
 
-            string newPath = Path.Combine(direotory, $"{PathFile}.{Extension}");
-
-            using(FileStream filesteam = new FileStream(newPath, FileMode.Create, FileAccess.Write))
+            using(FileStream filesteam = new FileStream(PathFile, FileMode.Create, FileAccess.Write))
             {
                 using(BinaryWriter write = new BinaryWriter(filesteam))
                 {

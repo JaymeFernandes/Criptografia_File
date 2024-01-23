@@ -1,6 +1,6 @@
 ﻿namespace Criptografia
 {
-    partial class Form1
+    partial class Form_Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,308 +29,203 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
+            Panel_Borderless = new Panel();
             Btn_Minimize = new Button();
             Btn_Close = new Button();
-            panel2 = new Panel();
-            label1 = new Label();
-            Btn_Menu = new Button();
             panel_Menu = new Panel();
-            panel6 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
+            Btn_Historico = new Button();
+            panel_SubMenu_Descriptografia = new Panel();
+            bnt_Descriptografia_Aes = new Button();
             panel5 = new Panel();
-            button4 = new Button();
-            button1 = new Button();
-            panel4 = new Panel();
-            Animation_Menu = new System.Windows.Forms.Timer(components);
+            Btn_Descriptografia = new Button();
+            panel_SubMenu_Criptografia = new Panel();
+            Btn_Criptografia_Aes = new Button();
+            panel3 = new Panel();
+            Btn_Criptografia = new Button();
+            panel1 = new Panel();
+            Animation_SubMenu_Criptografia = new System.Windows.Forms.Timer(components);
             panelMain = new Panel();
-            button6 = new Button();
-            button5 = new Button();
-            textBox1 = new TextBox();
             openFileDialog1 = new OpenFileDialog();
-            button7 = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            Animation_SubMenu_Descriptografia = new System.Windows.Forms.Timer(components);
+            Panel_Borderless.SuspendLayout();
             panel_Menu.SuspendLayout();
-            panel6.SuspendLayout();
-            panel5.SuspendLayout();
-            panelMain.SuspendLayout();
+            panel_SubMenu_Descriptografia.SuspendLayout();
+            panel_SubMenu_Criptografia.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // Panel_Borderless
             // 
-            panel1.BackColor = Color.FromArgb(125, 60, 152);
-            panel1.Controls.Add(Btn_Minimize);
-            panel1.Controls.Add(Btn_Close);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 21);
-            panel1.TabIndex = 0;
+            resources.ApplyResources(Panel_Borderless, "Panel_Borderless");
+            Panel_Borderless.BackColor = Color.FromArgb(5, 12, 26);
+            Panel_Borderless.Controls.Add(Btn_Minimize);
+            Panel_Borderless.Controls.Add(Btn_Close);
+            Panel_Borderless.Name = "Panel_Borderless";
+            Panel_Borderless.MouseDown += Panel_Borderless_MouseDown;
             // 
             // Btn_Minimize
             // 
-            Btn_Minimize.Dock = DockStyle.Right;
+            resources.ApplyResources(Btn_Minimize, "Btn_Minimize");
             Btn_Minimize.FlatAppearance.BorderSize = 0;
-            Btn_Minimize.FlatStyle = FlatStyle.Flat;
-            Btn_Minimize.Image = (Image)resources.GetObject("Btn_Minimize.Image");
-            Btn_Minimize.Location = new Point(730, 0);
             Btn_Minimize.Name = "Btn_Minimize";
-            Btn_Minimize.Size = new Size(35, 21);
-            Btn_Minimize.TabIndex = 2;
             Btn_Minimize.UseVisualStyleBackColor = true;
             Btn_Minimize.Click += Btn_Minimize_Click;
             // 
             // Btn_Close
             // 
-            Btn_Close.Dock = DockStyle.Right;
+            resources.ApplyResources(Btn_Close, "Btn_Close");
             Btn_Close.FlatAppearance.BorderSize = 0;
             Btn_Close.FlatAppearance.MouseOverBackColor = Color.Red;
-            Btn_Close.FlatStyle = FlatStyle.Flat;
-            Btn_Close.Image = (Image)resources.GetObject("Btn_Close.Image");
-            Btn_Close.Location = new Point(765, 0);
             Btn_Close.Name = "Btn_Close";
-            Btn_Close.Size = new Size(35, 21);
-            Btn_Close.TabIndex = 1;
             Btn_Close.UseVisualStyleBackColor = true;
             Btn_Close.Click += Btn_Close_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(160, 100, 190);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(Btn_Menu);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 21);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 42);
-            panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Segoe UI", 14F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(49, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 25);
-            label1.TabIndex = 3;
-            label1.Text = "Criptografia";
-            // 
-            // Btn_Menu
-            // 
-            Btn_Menu.Dock = DockStyle.Left;
-            Btn_Menu.FlatAppearance.BorderSize = 0;
-            Btn_Menu.FlatStyle = FlatStyle.Flat;
-            Btn_Menu.Image = (Image)resources.GetObject("Btn_Menu.Image");
-            Btn_Menu.Location = new Point(0, 0);
-            Btn_Menu.Name = "Btn_Menu";
-            Btn_Menu.Size = new Size(46, 42);
-            Btn_Menu.TabIndex = 0;
-            Btn_Menu.UseVisualStyleBackColor = true;
-            Btn_Menu.Click += Btn_Menu_Click;
-            // 
             // panel_Menu
             // 
-            panel_Menu.BackColor = Color.FromArgb(125, 60, 152);
-            panel_Menu.Controls.Add(panel6);
-            panel_Menu.Controls.Add(button2);
-            panel_Menu.Controls.Add(panel5);
-            panel_Menu.Controls.Add(button1);
-            panel_Menu.Controls.Add(panel4);
-            panel_Menu.Dock = DockStyle.Left;
-            panel_Menu.Location = new Point(0, 63);
+            resources.ApplyResources(panel_Menu, "panel_Menu");
+            panel_Menu.BackColor = Color.FromArgb(5, 12, 59);
+            panel_Menu.Controls.Add(Btn_Historico);
+            panel_Menu.Controls.Add(panel_SubMenu_Descriptografia);
+            panel_Menu.Controls.Add(Btn_Descriptografia);
+            panel_Menu.Controls.Add(panel_SubMenu_Criptografia);
+            panel_Menu.Controls.Add(Btn_Criptografia);
+            panel_Menu.Controls.Add(panel1);
             panel_Menu.Name = "panel_Menu";
-            panel_Menu.Size = new Size(198, 387);
-            panel_Menu.TabIndex = 2;
             // 
-            // panel6
+            // Btn_Historico
             // 
-            panel6.BackColor = Color.FromArgb(160, 100, 190);
-            panel6.Controls.Add(button3);
-            panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 204);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(198, 42);
-            panel6.TabIndex = 4;
+            resources.ApplyResources(Btn_Historico, "Btn_Historico");
+            Btn_Historico.Cursor = Cursors.Hand;
+            Btn_Historico.FlatAppearance.BorderSize = 0;
+            Btn_Historico.ForeColor = Color.White;
+            Btn_Historico.Name = "Btn_Historico";
+            Btn_Historico.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // panel_SubMenu_Descriptografia
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(0, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(198, 42);
-            button3.TabIndex = 0;
-            button3.Text = "Aes";
-            button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(panel_SubMenu_Descriptografia, "panel_SubMenu_Descriptografia");
+            panel_SubMenu_Descriptografia.Controls.Add(bnt_Descriptografia_Aes);
+            panel_SubMenu_Descriptografia.Controls.Add(panel5);
+            panel_SubMenu_Descriptografia.Name = "panel_SubMenu_Descriptografia";
             // 
-            // button2
+            // bnt_Descriptografia_Aes
             // 
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 8.25F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(198, 45);
-            button2.TabIndex = 2;
-            button2.Text = "Descriptografar";
-            button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(bnt_Descriptografia_Aes, "bnt_Descriptografia_Aes");
+            bnt_Descriptografia_Aes.Cursor = Cursors.Hand;
+            bnt_Descriptografia_Aes.FlatAppearance.BorderSize = 0;
+            bnt_Descriptografia_Aes.ForeColor = Color.White;
+            bnt_Descriptografia_Aes.Name = "bnt_Descriptografia_Aes";
+            bnt_Descriptografia_Aes.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(160, 100, 190);
-            panel5.Controls.Add(button4);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 117);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.BackColor = Color.MediumSlateBlue;
             panel5.Name = "panel5";
-            panel5.Size = new Size(198, 42);
-            panel5.TabIndex = 3;
             // 
-            // button4
+            // Btn_Descriptografia
             // 
-            button4.Anchor = AnchorStyles.Left;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(198, 42);
-            button4.TabIndex = 1;
-            button4.Text = "Aes";
-            button4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(Btn_Descriptografia, "Btn_Descriptografia");
+            Btn_Descriptografia.Cursor = Cursors.Hand;
+            Btn_Descriptografia.FlatAppearance.BorderSize = 0;
+            Btn_Descriptografia.ForeColor = Color.White;
+            Btn_Descriptografia.Name = "Btn_Descriptografia";
+            Btn_Descriptografia.UseVisualStyleBackColor = true;
+            Btn_Descriptografia.Click += Btn_Descriptografia_Click;
             // 
-            // button1
+            // panel_SubMenu_Criptografia
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(0, 72);
-            button1.Name = "button1";
-            button1.Size = new Size(198, 45);
-            button1.TabIndex = 1;
-            button1.Text = "Criptografar";
-            button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(panel_SubMenu_Criptografia, "panel_SubMenu_Criptografia");
+            panel_SubMenu_Criptografia.Controls.Add(Btn_Criptografia_Aes);
+            panel_SubMenu_Criptografia.Controls.Add(panel3);
+            panel_SubMenu_Criptografia.Name = "panel_SubMenu_Criptografia";
             // 
-            // panel4
+            // Btn_Criptografia_Aes
             // 
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(198, 72);
-            panel4.TabIndex = 0;
+            resources.ApplyResources(Btn_Criptografia_Aes, "Btn_Criptografia_Aes");
+            Btn_Criptografia_Aes.Cursor = Cursors.Hand;
+            Btn_Criptografia_Aes.FlatAppearance.BorderSize = 0;
+            Btn_Criptografia_Aes.ForeColor = Color.White;
+            Btn_Criptografia_Aes.Name = "Btn_Criptografia_Aes";
+            Btn_Criptografia_Aes.UseVisualStyleBackColor = true;
+            Btn_Criptografia_Aes.Click += Btn_Criptografia_Aes_Click;
             // 
-            // Animation_Menu
+            // panel3
             // 
-            Animation_Menu.Interval = 5;
-            Animation_Menu.Tick += Animation_Menu_Tick;
+            resources.ApplyResources(panel3, "panel3");
+            panel3.BackColor = Color.MediumSlateBlue;
+            panel3.Name = "panel3";
+            // 
+            // Btn_Criptografia
+            // 
+            resources.ApplyResources(Btn_Criptografia, "Btn_Criptografia");
+            Btn_Criptografia.Cursor = Cursors.Hand;
+            Btn_Criptografia.FlatAppearance.BorderSize = 0;
+            Btn_Criptografia.ForeColor = Color.White;
+            Btn_Criptografia.Name = "Btn_Criptografia";
+            Btn_Criptografia.UseVisualStyleBackColor = true;
+            Btn_Criptografia.Click += Btn_Criptografia_Click;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
+            // 
+            // Animation_SubMenu_Criptografia
+            // 
+            Animation_SubMenu_Criptografia.Interval = 5;
+            Animation_SubMenu_Criptografia.Tick += Animation_SubMenu_Criptografia_Tick;
             // 
             // panelMain
             // 
-            panelMain.AutoScroll = true;
-            panelMain.Controls.Add(button7);
-            panelMain.Controls.Add(button6);
-            panelMain.Controls.Add(button5);
-            panelMain.Controls.Add(textBox1);
-            panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(0, 63);
+            resources.ApplyResources(panelMain, "panelMain");
+            panelMain.BackColor = Color.FromArgb(5, 12, 26);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(800, 387);
-            panelMain.TabIndex = 3;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(366, 127);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 2;
-            button6.Text = "Criptografar";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(285, 127);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 1;
-            button5.Text = "abrir";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(285, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 23);
-            textBox1.TabIndex = 0;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(openFileDialog1, "openFileDialog1");
             // 
-            // button7
+            // Animation_SubMenu_Descriptografia
             // 
-            button7.Location = new Point(321, 159);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 3;
-            button7.Text = "Descriptografar";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            Animation_SubMenu_Descriptografia.Interval = 1;
+            Animation_SubMenu_Descriptografia.Tick += Animation_SubMenu_Descriptografia_Tick;
             // 
-            // Form1
+            // Form_Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel_Menu);
+            Controls.Add(Panel_Borderless);
             Controls.Add(panelMain);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panel_Menu);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
-            Text = "Form1";
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            Name = "Form_Main";
+            Panel_Borderless.ResumeLayout(false);
             panel_Menu.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panelMain.ResumeLayout(false);
-            panelMain.PerformLayout();
+            panel_SubMenu_Descriptografia.ResumeLayout(false);
+            panel_SubMenu_Criptografia.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Panel panel2;
-        private Button Btn_Menu;
         private Panel panel_Menu;
-        private System.Windows.Forms.Timer Animation_Menu;
+        private System.Windows.Forms.Timer Animation_SubMenu_Criptografia;
         private Button Btn_Close;
         private Button Btn_Minimize;
-        private Label label1;
         private Panel panelMain;
-        private Button button2;
-        private Button button1;
-        private Panel panel4;
-        private Panel panel5;
-        private Button button3;
-        private Panel panel6;
-        private Button button4;
-        private Button button6;
-        private Button button5;
-        private TextBox textBox1;
         private OpenFileDialog openFileDialog1;
-        private Button button7;
+        private Panel panel1;
+        private Button Btn_Criptografia;
+        private Panel panel_SubMenu_Criptografia;
+        private Panel panel3;
+        private Button Btn_Criptografia_Aes;
+        private Button Btn_Descriptografia;
+        private Panel panel_SubMenu_Descriptografia;
+        private Button bnt_Descriptografia_Aes;
+        private Panel panel5;
+        private Button Btn_Historico;
+        private System.Windows.Forms.Timer Animation_SubMenu_Descriptografia;
+        public Panel Panel_Borderless;
     }
 }
