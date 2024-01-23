@@ -116,6 +116,7 @@
             bnt_Descriptografia_Aes.ForeColor = Color.White;
             bnt_Descriptografia_Aes.Name = "bnt_Descriptografia_Aes";
             bnt_Descriptografia_Aes.UseVisualStyleBackColor = true;
+            bnt_Descriptografia_Aes.Click += bnt_Descriptografia_Aes_Click;
             // 
             // panel5
             // 

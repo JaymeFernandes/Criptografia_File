@@ -12,9 +12,9 @@ using Criptografia.Modules.Gerenciar_Arquivos;
 
 namespace Criptografia.Pages.Criptografia
 {
-    public partial class F_Aes : Form
+    public partial class F_Aes_Criptografia : Form
     {
-        public F_Aes()
+        public F_Aes_Criptografia()
         {
             InitializeComponent();
         }
@@ -114,16 +114,6 @@ namespace Criptografia.Pages.Criptografia
             Tb_Texto.Text = Convert.ToBase64String(temp);
         }
 
-        #endregion
-
-
-        #endregion
-
-
-        string diretory;
-        byte[] data;
-        byte[] Cript;
-
         private void Btn_Senha_Page2_Click(object sender, EventArgs e)
         {
             if (Mtb_Password_page2.PasswordChar == '*')
@@ -135,5 +125,15 @@ namespace Criptografia.Pages.Criptografia
                 Mtb_Password_page2.PasswordChar = '*';
             }
         }
+
+        #endregion
+
+
+        #endregion
+
+
+        string diretory;
+        byte[] data;
+        byte[] Cript;
     }
 }

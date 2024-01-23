@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Descriptografia\" />
     <Folder Include="Pages\Histórico\" />
     <Folder Include="Pages\Notification\" />
   </ItemGroup>

@@ -7,5 +7,8 @@
     <Compile Update="Pages\Criptografia\F_Aes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pages\Descriptografia\F_Aes.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

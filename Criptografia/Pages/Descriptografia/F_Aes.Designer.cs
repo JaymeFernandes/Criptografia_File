@@ -1,6 +1,6 @@
-﻿namespace Criptografia.Pages.Criptografia
+﻿namespace Criptografia.Pages.Descriptografia
 {
-    partial class F_Aes_Criptografia
+    partial class F_Aes_Descriptografia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             panel1 = new Panel();
             Tc_Main = new TabControl();
             Tp_File = new TabPage();
@@ -46,7 +47,6 @@
             Btn_Criptografar_Page2 = new Button();
             Mtb_Password_page2 = new MaskedTextBox();
             Tb_Texto = new TextBox();
-            label1 = new Label();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
             panel1.SuspendLayout();
@@ -55,13 +55,24 @@
             Tp_String.SuspendLayout();
             SuspendLayout();
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(47, 60);
+            label1.Name = "label1";
+            label1.Size = new Size(221, 30);
+            label1.TabIndex = 3;
+            label1.Text = "Descriptografia - AES";
+            // 
             // panel1
             // 
             panel1.Controls.Add(Tc_Main);
-            panel1.Location = new Point(56, 92);
+            panel1.Location = new Point(47, 93);
             panel1.Name = "panel1";
             panel1.Size = new Size(574, 313);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
             // 
             // Tc_Main
             // 
@@ -122,7 +133,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(6, 80);
+            label3.Location = new Point(9, 83);
             label3.Name = "label3";
             label3.Size = new Size(45, 17);
             label3.TabIndex = 8;
@@ -134,7 +145,7 @@
             Btn_SaveFile.FlatAppearance.BorderSize = 0;
             Btn_SaveFile.FlatStyle = FlatStyle.Flat;
             Btn_SaveFile.ForeColor = Color.White;
-            Btn_SaveFile.Location = new Point(102, 157);
+            Btn_SaveFile.Location = new Point(108, 157);
             Btn_SaveFile.Name = "Btn_SaveFile";
             Btn_SaveFile.Size = new Size(90, 34);
             Btn_SaveFile.TabIndex = 5;
@@ -150,9 +161,9 @@
             Btn_CriptografarFile.ForeColor = Color.White;
             Btn_CriptografarFile.Location = new Point(6, 157);
             Btn_CriptografarFile.Name = "Btn_CriptografarFile";
-            Btn_CriptografarFile.Size = new Size(90, 34);
+            Btn_CriptografarFile.Size = new Size(96, 34);
             Btn_CriptografarFile.TabIndex = 4;
-            Btn_CriptografarFile.Text = "Criptografar";
+            Btn_CriptografarFile.Text = "Descriptografar";
             Btn_CriptografarFile.UseVisualStyleBackColor = false;
             Btn_CriptografarFile.Click += Btn_CriptografarFile_Click;
             // 
@@ -161,7 +172,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(6, 20);
+            label2.Location = new Point(9, 23);
             label2.Name = "label2";
             label2.Size = new Size(64, 17);
             label2.TabIndex = 2;
@@ -212,7 +223,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(49, 3);
+            label5.Location = new Point(52, 6);
             label5.Name = "label5";
             label5.Size = new Size(42, 17);
             label5.TabIndex = 13;
@@ -223,7 +234,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(49, 130);
+            label4.Location = new Point(52, 133);
             label4.Name = "label4";
             label4.Size = new Size(45, 17);
             label4.TabIndex = 12;
@@ -241,7 +252,6 @@
             Btn_Senha_Page2.TabIndex = 11;
             Btn_Senha_Page2.Text = "Ver Senha";
             Btn_Senha_Page2.UseVisualStyleBackColor = false;
-            Btn_Senha_Page2.Click += Btn_Senha_Page2_Click;
             // 
             // Btn_Criptografar_Page2
             // 
@@ -255,7 +265,6 @@
             Btn_Criptografar_Page2.TabIndex = 5;
             Btn_Criptografar_Page2.Text = "Criptografar";
             Btn_Criptografar_Page2.UseVisualStyleBackColor = false;
-            Btn_Criptografar_Page2.Click += Btn_Criptografar_Page2_Click;
             // 
             // Mtb_Password_page2
             // 
@@ -274,33 +283,21 @@
             Tb_Texto.Size = new Size(458, 105);
             Tb_Texto.TabIndex = 1;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(56, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(189, 30);
-            label1.TabIndex = 1;
-            label1.Text = "Criptografia - AES";
-            // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // F_Aes_Criptografia
+            // F_Aes_Descriptografia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             BackColor = Color.FromArgb(5, 12, 26);
             ClientSize = new Size(669, 466);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "F_Aes_Criptografia";
-            Text = "F_Aes";
+            Name = "F_Aes_Descriptografia";
+            Text = "F_Aes_Descriptografia";
             panel1.ResumeLayout(false);
             Tc_Main.ResumeLayout(false);
             Tp_File.ResumeLayout(false);
@@ -313,26 +310,26 @@
 
         #endregion
 
+        private Label label1;
         private Panel panel1;
         private TabControl Tc_Main;
         private TabPage Tp_File;
-        private TabPage Tp_String;
-        private Label label1;
-        private Button Btn_OpenFile;
-        private TextBox Tb_Diretory;
-        private Label label2;
-        private Button Btn_SaveFile;
-        private Button Btn_CriptografarFile;
         private Button Btn_Senha;
         private MaskedTextBox Mtb_Password;
         private Label label3;
-        public OpenFileDialog openFileDialog1;
-        private SaveFileDialog saveFileDialog1;
+        private Button Btn_SaveFile;
+        private Button Btn_CriptografarFile;
+        private Label label2;
+        private Button Btn_OpenFile;
+        private TextBox Tb_Diretory;
+        private TabPage Tp_String;
+        private Label label5;
+        private Label label4;
         private Button Btn_Senha_Page2;
         private Button Btn_Criptografar_Page2;
         private MaskedTextBox Mtb_Password_page2;
         private TextBox Tb_Texto;
-        private Label label5;
-        private Label label4;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

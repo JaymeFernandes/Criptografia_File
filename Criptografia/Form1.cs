@@ -1,6 +1,6 @@
-using Criptografia.Modules.CriptoFile;
-using Criptografia.Modules.Gerenciar_Arquivos;
+
 using Criptografia.Pages.Criptografia;
+using Criptografia.Pages.Descriptografia;
 using System.Text;
 using System;
 using System.Drawing;
@@ -30,12 +30,13 @@ namespace Criptografia
         private void LoadingPage(Form Page)
         {
             ClosePage();
+            PageSelect = Page;
+            PageSelect.Dock = DockStyle.Fill;
+            PageSelect.TopLevel = false;
+            this.panelMain.Controls.Add(PageSelect);
+            this.panelMain.Tag = PageSelect;
 
-            Page.Dock = DockStyle.Fill;
-            Page.TopLevel = false;
-            this.panelMain.Controls.Add(Page);
-            this.panelMain.Tag = Page;
-            Page.Show();
+            PageSelect.Show();
         }
 
         #endregion
@@ -126,7 +127,7 @@ namespace Criptografia
 
         //Variavel que guarda se o menu está aberto
         bool Menu_Criptografia = false;
-        bool Menu_Descriptografia = true;
+        bool Menu_Descriptografia = false;
         Form PageSelect;
 
 
@@ -139,7 +140,12 @@ namespace Criptografia
 
         private void Btn_Criptografia_Aes_Click(object sender, EventArgs e)
         {
-            LoadingPage(new F_Aes());
+            LoadingPage(new F_Aes_Criptografia());
+        }
+
+        private void bnt_Descriptografia_Aes_Click(object sender, EventArgs e)
+        {
+            LoadingPage(new F_Aes_Descriptografia());
         }
     }
 }

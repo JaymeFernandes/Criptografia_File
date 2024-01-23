@@ -170,7 +170,7 @@
     <value>NoControl</value>
   </data>
   <data name="Btn_Historico.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 232</value>
+    <value>0, 198</value>
   </data>
   <data name="Btn_Historico.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 48</value>
@@ -203,7 +203,7 @@
     <value>Left</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 34</value>
+    <value>10, 0</value>
   </data>
   <data name="panel_SubMenu_Descriptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -212,7 +212,7 @@
     <value>0, 198</value>
   </data>
   <data name="panel_SubMenu_Descriptografia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 34</value>
+    <value>206, 0</value>
   </data>
   <data name="Btn_Descriptografia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
