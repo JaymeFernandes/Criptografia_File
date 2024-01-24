@@ -133,7 +133,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(9, 83);
+            label3.Location = new Point(6, 80);
             label3.Name = "label3";
             label3.Size = new Size(45, 17);
             label3.TabIndex = 8;
@@ -172,7 +172,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(9, 23);
+            label2.Location = new Point(6, 20);
             label2.Name = "label2";
             label2.Size = new Size(64, 17);
             label2.TabIndex = 2;
@@ -252,6 +252,7 @@
             Btn_Senha_Page2.TabIndex = 11;
             Btn_Senha_Page2.Text = "Ver Senha";
             Btn_Senha_Page2.UseVisualStyleBackColor = false;
+            Btn_Senha_Page2.Click += Btn_Senha_Page2_Click;
             // 
             // Btn_Criptografar_Page2
             // 
@@ -265,6 +266,7 @@
             Btn_Criptografar_Page2.TabIndex = 5;
             Btn_Criptografar_Page2.Text = "Criptografar";
             Btn_Criptografar_Page2.UseVisualStyleBackColor = false;
+            Btn_Criptografar_Page2.Click += Btn_Criptografar_Page2_Click;
             // 
             // Mtb_Password_page2
             // 

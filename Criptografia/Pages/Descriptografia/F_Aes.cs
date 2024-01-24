@@ -58,7 +58,7 @@ namespace Criptografia.Pages.Descriptografia
 
                 Decript = aes.DescriptografarArquivos(Mtb_Password.Text, data);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -104,6 +104,28 @@ namespace Criptografia.Pages.Descriptografia
 
         #region // page texto
 
+        private void Btn_Criptografar_Page2_Click(object sender, EventArgs e)
+        {
+            if (Mtb_Password_page2.Text.Length < 5)
+            {
+                MessageBox.Show("Necesita de uma senha para a criptografia de no minimo 5 caracteres");
+                Mtb_Password.Focus();
+                return;
+            }
+            else if (Tb_Texto.Text.Length == 0)
+            {
+                MessageBox.Show("Necessita de um texto para a criptografia");
+                Tb_Texto.Focus();
+                return;
+            }
+
+            Aes aes = new Aes();
+            byte[] byteArray = Convert.FromBase64String(Tb_Texto.Text);
+            Tb_Texto.Text = aes.DesCriptografarString(Mtb_Password.Text, byteArray);
+        }
+
+
+
         #endregion
 
 
@@ -116,5 +138,16 @@ namespace Criptografia.Pages.Descriptografia
         byte[] data;
         byte[] Decript;
 
+        private void Btn_Senha_Page2_Click(object sender, EventArgs e)
+        {
+            if (Mtb_Password_page2.PasswordChar == '*')
+            {
+                Mtb_Password_page2.PasswordChar = '\0';
+            }
+            else
+            {
+                Mtb_Password_page2.PasswordChar = '*';
+            }
+        }
     }
 }

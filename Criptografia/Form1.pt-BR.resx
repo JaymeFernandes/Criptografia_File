@@ -245,7 +245,7 @@
     <value>206, 48</value>
   </data>
   <data name="Btn_Descriptografia.Text" xml:space="preserve">
-    <value>Criptografia</value>
+    <value>Descriptografia</value>
   </data>
   <data name="Btn_Descriptografia.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
