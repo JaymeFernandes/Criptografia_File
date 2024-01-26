@@ -100,6 +100,7 @@
             Btn_Historico.ForeColor = Color.White;
             Btn_Historico.Name = "Btn_Historico";
             Btn_Historico.UseVisualStyleBackColor = true;
+            Btn_Historico.Click += Btn_Historico_Click;
             // 
             // panel_SubMenu_Descriptografia
             // 

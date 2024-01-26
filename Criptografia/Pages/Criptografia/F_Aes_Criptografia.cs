@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Criptografia.Pages.Histórico;
 using Criptografia.Modules.CriptoFile;
 using Criptografia.Modules.Gerenciar_Arquivos;
 
@@ -26,12 +27,38 @@ namespace Criptografia.Pages.Criptografia
 
         private void Btn_OpenFile_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                diretory = openFileDialog1.FileName;
-                Tb_Diretory.Text = diretory;
-                Cript = null;
-                data = ReadFile.GetBytes(diretory);
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    diretory = openFileDialog1.FileName;
+                    Tb_Diretory.Text = diretory;
+                    Cript = null;
+                    data = AcessFile.ReadBytes(diretory);
+
+                    List<HistoricoObj> list = new List<HistoricoObj>();
+
+                    if (File.Exists(@"Modules/Historico.json"))
+                    {
+                        string json = AcessFile.Read(@"Modules/Historico.json");
+
+                        list = JSON.ConvertObject<HistoricoObj>(json);
+
+                    }
+
+                    HistoricoObj file = new HistoricoObj();
+                    file.name = Path.GetFileName(diretory);
+                    file.pathFile = diretory;
+                    file.date = DateTime.Now;
+                    file.TypeCript = "Criptografia - AES";
+                    list.Add(file);
+
+                    AcessFile.Write(JSON.ConvertJson<HistoricoObj>(list), "Modules/Historico.json");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -67,7 +94,7 @@ namespace Criptografia.Pages.Criptografia
 
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    CreateFile.CopyFile(Cript, saveFileDialog1.FileName);
+                    AcessFile.WriteByte(Cript, saveFileDialog1.FileName);
                 }
             }
             else

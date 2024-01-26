@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Criptografia.Pages.Histórico;
+using System.Collections;
 
 namespace Criptografia.Pages.Descriptografia
 {
@@ -33,7 +35,7 @@ namespace Criptografia.Pages.Descriptografia
                 diretory = openFileDialog1.FileName;
                 Tb_Diretory.Text = diretory;
                 Decript = null;
-                data = ReadFile.GetBytes(diretory);
+                data = AcessFile.ReadBytes(diretory);
             }
         }
 
@@ -76,8 +78,27 @@ namespace Criptografia.Pages.Descriptografia
 
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    CreateFile.CopyFile(Decript, saveFileDialog1.FileName);
+                    AcessFile.WriteByte(Decript, saveFileDialog1.FileName);
                 }
+
+                List<HistoricoObj> list = new List<HistoricoObj>();
+
+                if (File.Exists(@"Modules/Historico.json"))
+                {
+                    string json = AcessFile.Read(@"Modules/Historico.json");
+
+                    list = JSON.ConvertObject<HistoricoObj>(json);
+                    
+                }
+
+                HistoricoObj file = new HistoricoObj();
+                file.name = Path.GetFileName(diretory);
+                file.pathFile = diretory;
+                file.date = DateTime.Now;
+                file.TypeCript = "Descriptografia - AES";
+                list.Add(file);
+
+                AcessFile.Write(JSON.ConvertJson<HistoricoObj>(list), "Modules/Historico.json");
             }
             else
             {

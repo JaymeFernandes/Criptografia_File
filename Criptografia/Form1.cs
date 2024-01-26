@@ -1,6 +1,7 @@
 
 using Criptografia.Pages.Criptografia;
 using Criptografia.Pages.Descriptografia;
+using Criptografia.Pages.Histórico;
 using System.Text;
 using System;
 using System.Drawing;
@@ -146,6 +147,11 @@ namespace Criptografia
         private void bnt_Descriptografia_Aes_Click(object sender, EventArgs e)
         {
             LoadingPage(new F_Aes_Descriptografia());
+        }
+
+        private void Btn_Historico_Click(object sender, EventArgs e)
+        {
+            LoadingPage(new F_Histórico());
         }
     }
 }
