@@ -1,121 +1,137 @@
-﻿using Criptografia.Modules.Gerenciar_Arquivos;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using Criptografia.Modules.Gerenciar_Arquivos;
 
 namespace Criptografia.Pages.Histórico
 {
     public partial class F_Histórico : Form
     {
+        private const string PathFile = @"Modules/Historico.json";
+        private List<CryptHistoryEntry> Obj_historico = new List<CryptHistoryEntry>();
+        private const int BackgroundColorArgb = unchecked((int)0xFF050C1A); // ARGB: 5, 12, 26
+        private const int DesignColorArgb = unchecked((int)0xFF800080); // ARGB: 128, 0, 128
+        private const int SeparatorColorArgb = unchecked((int)0xFFFFFFFF); // ARGB: 255, 255, 255
+
+
         public F_Histórico()
         {
             InitializeComponent();
-            LoadingHistorico();
+            CarregarHistorico();
         }
 
-        private void LoadingHistorico()
+        #region Carregamento das informações
+
+        /// <summary>
+        /// Carrega o histórico de criptografia do arquivo JSON e exibe as informações na interface do usuário.
+        /// </summary>
+        private void CarregarHistorico()
         {
             if (File.Exists(PathFile))
-            {
-                string json = AcessFile.Read(PathFile);
-                Obj_historico.Clear();
-                Obj_historico = JSON.ConvertObject<HistoricoObj>(json);
-            }
+                Obj_historico = CarregarHistoricoDoJson();
 
-            panelVill.Controls.Clear();
-            if(Obj_historico.Count > 0)
+            P_Vill.Controls.Clear();
+
+            if (Obj_historico.Count > 0)
             {
                 foreach (var obj in Obj_historico)
-                {
-                    MessageBox.Show(obj.pathFile);
-                    //Controls
-                    Panel P_vill = new Panel();
-                    Panel P_desing = new Panel();
-                    Panel P_separador = new Panel();
-                    Label L_nome = new Label();
-                    Label L_local = new Label();
-                    Label L_tipo = new Label();
-                    Label L_data = new Label();
-
-                    //Nome
-                    L_nome.Size = new Size(300, 21);
-                    L_nome.Text = $"Nome: {obj.name}";
-                    L_nome.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                    L_nome.ForeColor = Color.White;
-
-                    //local
-                    L_local.Size = new Size(600, 21);
-                    L_local.Text = $"Local: {obj.pathFile}";
-                    L_local.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                    L_local.ForeColor = Color.White;
-
-                    //tipo
-                    L_tipo.Size = new Size(300, 21);
-                    L_tipo.Text = $"Tipo: {obj.TypeCript}";
-                    L_tipo.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                    L_tipo.ForeColor = Color.White;
-
-                    //data
-                    L_data.Size = new Size(300, 21);
-                    L_data.Text = $"Data: {obj.date.ToString()}";
-                    L_data.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                    L_data.ForeColor = Color.White;
-
-                    //config location labels
-                    L_nome.Size = new Size(300, 21);
-                    L_nome.Location = new Point(24, 0);
-                    L_local.Location = new Point(24, 45);
-                    L_tipo.Location = new Point(375, 0);
-                    L_data.Location = new Point(24, 24);
-
-                    //config panel vill primario
-                    P_vill.BackColor = Color.FromArgb(5, 12, 26);
-                    P_vill.Height = 69;
-                    P_vill.Dock = DockStyle.Top;
-
-                    //configurações do desing
-                    P_desing.BackColor = Color.Purple;
-                    P_desing.Width = 18;
-                    P_desing.Dock = DockStyle.Left;
-
-                    P_separador.BackColor = Color.White;
-                    P_separador.Height = 1;
-                    P_separador.Dock = DockStyle.Top;
-
-                    //add ao panel os controles
-                    P_vill.Controls.Add(L_nome);
-                    P_vill.Controls.Add(L_local);
-                    P_vill.Controls.Add(L_tipo);
-                    P_vill.Controls.Add(L_data);
-                    P_vill.Controls.Add(P_desing);
-                    //add o panel vill principal
-                    panelVill.Controls.Add(P_separador);
-                    panelVill.Controls.Add(P_vill);
-
-                }
+                    AdicionarControlesHistorico(obj);
             }
             else
             {
-                panelVill.Controls.Clear();
-
-                Label info = new Label();
-                info.Text = "Ainda não possui histórico";
-                info.ForeColor = Color.White;
-                info.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                info.Dock = DockStyle.Top;
-
-                panelVill.Controls.Add(info);
+                ExibirMensagemSemHistorico();
             }
-
         }
 
-        private const string PathFile = @"Modules/Historico.json";
-        private List<HistoricoObj> Obj_historico = new List<HistoricoObj>();
+        /// <summary>
+        /// Carrega o histórico de criptografia do arquivo JSON e retorna a lista de objetos históricos.
+        /// </summary>
+        /// <returns>A lista de objetos históricos carregada do arquivo JSON.</returns>
+        private List<CryptHistoryEntry> CarregarHistoricoDoJson()
+        {
+            string json = ArquivoHandler.LerArquivo(PathFile);
+            return JSON.ConvertObject<CryptHistoryEntry>(json);
+        }
+
+        /// <summary>
+        /// Adiciona controles ao painel P_Vill exibindo informações do histórico.
+        /// </summary>
+        /// <param name="obj">Objeto que representa o histórico a ser exibido.</param>
+        private void AdicionarControlesHistorico(CryptHistoryEntry obj)
+        {
+            var P_vill = CriarPanel(Color.FromArgb(BackgroundColorArgb), 69, 0, DockStyle.Top);
+            var P_desing = CriarPanel(Color.FromArgb(DesignColorArgb), 0, 18, DockStyle.Left);
+            var P_separador = CriarPanel(Color.FromArgb(SeparatorColorArgb), 1, 0, DockStyle.Top);
+
+            var L_nome = CriarLabel($"Nome: {obj.name}", new Size(300, 21), new Point(24, 0));
+            var L_local = CriarLabel($"Local: {obj.pathFile}", new Size(600, 21), new Point(24, 45));
+            var L_tipo = CriarLabel($"Tipo: {obj.TypeCript}", new Size(300, 21), new Point(375, 0));
+            var L_data = CriarLabel($"Data: {obj.date.ToString()}", new Size(300, 21), new Point(24, 24));
+
+            P_vill.Controls.AddRange(new Control[] { P_desing, L_nome, L_local, L_tipo, L_data });
+            P_Vill.Controls.AddRange(new Control[] { P_vill, P_separador });
+        }
+
+        /// <summary>
+        /// Exibe uma mensagem informando que não há histórico disponível.
+        /// </summary>
+        private void ExibirMensagemSemHistorico()
+        {
+            P_Vill.Controls.Clear();
+
+            var info = CriarLabel("Ainda não possui histórico", new Size(0, 0), new Point(0, 0));
+            info.ForeColor = Color.White;
+            info.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            P_Vill.Controls.Add(info);
+        }
+
+        #endregion
+
+        #region Criação dos componentes
+
+        /// <summary>
+        /// Cria e retorna um novo painel com as propriedades especificadas.
+        /// </summary>
+        /// <param name="corDeFundo">A cor de fundo do painel.</param>
+        /// <param name="altura">A altura do painel.</param>
+        /// <param name="largura">A largura do painel.</param>
+        /// <param name="dockStyle">O estilo de ancoragem do painel.</param>
+        /// <returns>O painel criado.</returns>
+        private Panel CriarPanel(Color corDeFundo, int altura, int largura, DockStyle dockStyle)
+        {
+            return new Panel
+            {
+                BackColor = corDeFundo,
+                Width = largura,
+                Height = altura,
+                Dock = dockStyle
+            };
+        }
+
+        /// <summary>
+        /// Cria e retorna uma nova etiqueta com as propriedades especificadas.
+        /// </summary>
+        /// <param name="texto">O texto da etiqueta.</param>
+        /// <param name="tamanho">O tamanho da etiqueta.</param>
+        /// <param name="localizacao">A localização da etiqueta.</param>
+        /// <returns>A etiqueta criada.</returns>
+        private Label CriarLabel(string texto, Size tamanho, Point localizacao)
+        {
+            return new Label
+            {
+                Text = texto,
+                Size = tamanho,
+                Location = localizacao,
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(BackgroundColorArgb)
+            };
+        }
+
+        #endregion
+
     }
 }

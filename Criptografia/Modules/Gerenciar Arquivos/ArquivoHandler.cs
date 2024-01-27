@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Criptografia.Modules.Gerenciar_Arquivos
 {
-    class AcessFile
+    class ArquivoHandler
     {
         #region // Escrita
 
-        public static void WriteByte(byte[] Dados,string PathFile)
+        public static void EscreverArquivo(byte[] Dados,string PathFile)
         {
 
             using(FileStream filesteam = new FileStream(PathFile, FileMode.Create, FileAccess.Write))
@@ -23,7 +23,7 @@ namespace Criptografia.Modules.Gerenciar_Arquivos
             }
         }
 
-        public static void Write(string Dados, string PathFile)
+        public static void EscreverArquivo(string Dados, string PathFile)
         {
             string diretory = Path.GetDirectoryName(PathFile);
 
@@ -42,7 +42,7 @@ namespace Criptografia.Modules.Gerenciar_Arquivos
 
         #region // Leitura
 
-        public static byte[] ReadBytes(string PathFile)
+        public static byte[] LerArquivoByte(string PathFile)
         {
             if (!File.Exists(PathFile)) throw new FileNotFoundException("O arquivo passado não existe/Foi excluido!");
 
@@ -59,7 +59,7 @@ namespace Criptografia.Modules.Gerenciar_Arquivos
             }
         }
 
-        public static string Read(string PathFile)
+        public static string LerArquivo(string PathFile)
         {
             if (!File.Exists(PathFile)) throw new FileNotFoundException("O arquivo passado não existe/Foi excluido!");
 

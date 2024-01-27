@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Criptografia.Pages.Histórico
 {
-    public class HistoricoObj
+    public class CryptHistoryEntry
     {
         public string name {  get; set; }
         public string pathFile { get; set; }
