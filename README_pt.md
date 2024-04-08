@@ -1,77 +1,78 @@
 
-# 🛡️ File Encryption 📜
+# 🛡️ Criptografia de Arquivos 📜
 
-File Encryption is a software project focused on providing encryption and decryption capabilities for text and files.
-It offers a secure way to protect sensitive information by encrypting data and decrypting it when necessary.
-It is in the development phase if you find bugs or have ideas to improve the project, feel free to open a comment or send a pull request. 💡
+Criptografia de Arquivos é um projeto de software focado em fornecer recursos de criptografia e descriptografia para texto e arquivos.
+Ele oferece uma maneira segura de proteger informações confidenciais, criptografando dados e descriptografando-os quando necessário.
+Está em fase de desenvolvimento se você encontrar bugs ou tiver ideias para melhorar o projeto, fique à vontade para abrir um comentário ou enviar um pull request. 💡
+
 
 <div style="display: flex;">
   <div style="flex: 1; margin-right: 10px;">
-    <table border="1">
+      <table border=1>
       <tr>
-        <th>Cryptography</th>
+        <th>Criptografia</th>
         <th>Status</th>
       </tr>
       <tr>
         <td>AES</td>
-        <td>✅ Implemented</td>
+        <td>✅ Implementado</td>
       </tr>
       <tr>
         <td>DES</td>
-        <td>⌛ In Development</td>
+        <td>⌛ Desenvolvimento</td>
       </tr>
       <tr>
         <td>RSA</td>
-        <td>⌛ In Development</td>
+        <td>⌛ Desenvolvimento</td>
       </tr>
     </table>
   </div>
   <div style="flex: 1; margin-left: 10px;">
-    <table border="1">
-      <tr>
-        <th>Hash</th>
-        <th>Status</th>
-      </tr>
-      <tr>
+    
+   <table border=1>
+    <tr>
+      <th>Hash</th>
+      <th>Status</th>
+    </tr>
+    <tr>
         <td>SHA-256</td>
-        <td>⌛ In Development</td>
+        <td>⌛ Desenvolvimento</td>
       </tr>
       <tr>
         <td>bcrypt</td>
-        <td>⌛ In Development</td>
+        <td>⌛ Desenvolvimento</td>
       </tr>
-    </table>
+   </table>
+
   </div>
 </div>
-
 
 # Choose Language 🌐
 
 <div style="text-align: left; display: flex;">
   <span style="display: inline-block; margin-right: 10px;">
     <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">English</button>
+      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Inglês</button>
     </a>
   </span>
   <span style="display: inline-block; margin-right: 10px;">
     <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_pt.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Portuguese</button>
+      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Português</button>
     </a>
   </span>
   <span style="display: inline-block;">
     <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_es.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Spanish</button>
+      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Espanhol</button>
     </a>
   </span>
 </div>
 
+## Funcionalidades ✨
 
-## Features ✨
+- Criptografar/Descriptografar textos 🔐
+- Criptografar/Descriptografar arquivos 📁
 
-- Encrypt/Decrypt texts 🔐
-- Encrypt/Decrypt files 📁
-
-## Installation 🚀
+## Instalação 🚀
 
 1. Clone the repository:
 
@@ -79,22 +80,22 @@ It is in the development phase if you find bugs or have ideas to improve the pro
   git clone https://github.com/JaymeFernandes/Criptografia_File.git
 ```
 
-2. Installation:
+2. Instale as dependências:
 
     - [SDK .NET 8.0](https://download.visualstudio.microsoft.com/download/pr/cb56b18a-e2a6-4f24-be1d-fc4f023c9cc8/be3822e20b990cf180bb94ea8fbc42fe/dotnet-sdk-8.0.101-win-x64.exe)
 
     - [Visual Studio](https://visualstudio.microsoft.com/pt-br/)
 
-3. Open the file:
+3. Abrir arquivo:
 
     - [Criptografia.sln](Criptografia.sln)
 
-## Authors 👨‍💻
+## Autores 👨‍💻
 
 - [@Jayme Fernandes](https://github.com/JaymeFernandes)
 
 
-## Technology Stack 💻
+## Stack utilizada 💻
 
 **Front-end:** Windows Forms
 
@@ -102,9 +103,9 @@ It is in the development phase if you find bugs or have ideas to improve the pro
 
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://dotnet.microsoft.com/pt-br/languages/csharp)
 
-## Contributing 🤝
+## Contribuindo 🤝
 
-Contributions to File Encryption are welcomed and encouraged. If you encounter any bugs or have ideas for improving the project, feel free to open an issue or submit a pull request following the project's code of conduct. 🙏
+Contribuições são sempre bem-vindas! Se você encontrar bugs ou tiver ideias para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request. Por favor, siga o código de conduta desse projeto. 🙏
 
 
 
