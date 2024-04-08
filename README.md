@@ -47,24 +47,13 @@ It is in the development phase if you find bugs or have ideas to improve the pro
 
 # Choose Language 🌐
 
-<div style="text-align: left; display: flex;">
-  <span style="display: inline-block; margin-right: 10px;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">English</button>
-    </a>
-  </span>
-  <span style="display: inline-block; margin-right: 10px;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_pt.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Portuguese</button>
-    </a>
-  </span>
-  <span style="display: inline-block;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_es.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Spanish</button>
-    </a>
-  </span>
-</div>
-
+<table border=1>
+  <tr>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README.md">English</a></td>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README_pt.md">Português</a></td>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README_es.md">Español</a></td>
+  </tr>
+</table>
 
 ## Features ✨
 
@@ -106,16 +95,3 @@ It is in the development phase if you find bugs or have ideas to improve the pro
 
 Contributions to File Encryption are welcomed and encouraged. If you encounter any bugs or have ideas for improving the project, feel free to open an issue or submit a pull request following the project's code of conduct. 🙏
 
-
-
-<style>
-  /* Cor padrão para temas claros */
-  .markdown-body .theme-text {
-    color: white;
-  }
-
-  /* Cor do texto para temas escuros */
-  .markdown-body-dark .theme-text {
-    color: black;
-  }
-</style>

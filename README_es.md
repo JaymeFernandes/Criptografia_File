@@ -46,23 +46,13 @@ Está en fase de desarrollo, si encuentras errores o tienes ideas para mejorar e
 
 # Elegir Idioma 🌐
 
-<div style="text-align: left; display: flex;">
-  <span style="display: inline-block; margin-right: 10px;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Inglés</button>
-    </a>
-  </span>
-  <span style="display: inline-block; margin-right: 10px;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_pt.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Portugués</button>
-    </a>
-  </span>
-  <span style="display: inline-block;">
-    <a href="https://github.com/JaymeFernandes/Discord_Bot_Base/blob/master/README_es.md">
-      <button class="theme-text" style="width: 200px; height: 50px; border-radius: 20px; border-color: purple; background-color: transparent;">Español</button>
-    </a>
-  </span>
-</div>
+<table border=1>
+  <tr>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README.md">Inglés</a></td>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README_pt.md">Portugués</a></td>
+    <td><a href="https://github.com/JaymeFernandes/Criptografia_File/blob/master/README_es.md">Español</a></td>
+  </tr>
+</table>
 
 ## Funcionalidades ✨
 
